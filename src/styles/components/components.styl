@@ -1,0 +1,201 @@
+.item
+    min-height 100%
+    display flex
+    flex-flow row
+    &__col
+        padding 30px 40px 30px 0
+        min-height 100%
+        @media $m
+            padding 30px 0
+        img
+            max-width 100%
+    &__col.cart
+        position sticky
+        top 95px
+        background #fff
+        width 480px
+        padding 0 20px 0 14px
+        flex 0 0 auto
+        user-select: none;
+        overflow-y auto
+        height: calc(100vh - 95px)
+        overscroll-behavior: contain;
+        transition opacity 0.3s ease
+        @media $l
+            width 380px
+        @media $m
+            width 100%
+            min-height 0
+            height 0
+            position fixed
+            left 0
+            top 85px
+            overflow hidden
+            z-index 10
+            opacity 0
+            &.active
+                height 100%
+                overflow auto
+                opacity 1
+            .cart-section_last
+                padding-bottom 160px
+        @media $s
+            top 70px
+    &__intro
+        margin-bottom 50px
+    .tags__item
+        background #e7e7e7
+
+.cart-bottom
+    position sticky
+    bottom 1px
+    display flex
+    justify-content space-between
+    align-items center
+    background #fff
+    font-size 18px
+    height 80px
+    border-top 1px solid rgba(0,0,0,0.1)
+    @media $m
+        position fixed
+        width calc(100% - 36px)
+        bottom -80px
+        .cart.active &
+            bottom 0
+            margin-top 80px
+    &__total
+        span 
+            color $purple
+            font-weight 500
+    .iconify
+        font-size 26px
+        margin-right 12px
+
+.buy-mobile
+    position fixed
+    bottom 18px
+    width calc(100% - 24px)
+    height 50px
+    left 50%
+    transform translateX(-50%)
+    box-shadow 0 16px 24px rgba(104,106,115,0.08), 0 2px 8px rgba(104,106,115,0.06)
+    display none
+    @media $m
+        display flex
+    .iconify
+        font-size 28px
+        margin-right 8px
+
+.cart-close
+    position fixed
+    top 106px
+    right 16px
+    width 40px
+    height 40px
+    z-index 100
+    background #fff
+    border 1px solid $blue
+    display flex
+    align-items center
+    border-radius 50%
+    cursor pointer
+    display none
+    @media $m
+        .cart.active &
+            display block
+    @media $m768
+        top 96px
+    @media $s
+        top 80px
+    &:after
+        display block
+        content: "\00d7"; 
+        font-size 40px
+        color $blue
+        position absolute
+        width 100%
+        height 100%
+        display flex
+        align-items center
+        justify-content center
+        top -4px
+
+.cover
+    width 320px
+    height 240px
+    background-size cover
+    border-radius 10px
+    margin-bottom 18px
+
+.tabs
+    margin 0 -4px 20px
+    &__item
+        display inline-flex
+        align-items center
+        color $text
+        border 1px solid $textGray
+        padding 4px 16px
+        border-radius 4px
+        margin 0 4px
+        font-weight 500
+        background #f7f7f7
+        transition all 0.3s ease
+        &:hover
+            color $purple
+            border-color $purpleLight
+        &.active
+            color $purple
+            border-color $purple
+            background #f8eaff
+
+.tabs-content
+    &__item
+        opacity 0
+        visibility hidden
+        transition opacity 0.3s ease
+        overflow hidden
+        height 0
+        &.active
+            opacity 1
+            visibility visible
+            height auto
+
+.cart-section
+    border-bottom 1px solid #ccc
+    margin-top 20px
+
+.price-item
+    display flex
+    margin-bottom 12px
+    &__price
+        width 86px
+        text-align right
+        flex 0 0 auto
+    &__title
+        span
+            display block
+            font-size 12px
+            line-height: normal
+            color $textGray
+
+.list-toggle
+    display flex
+    align-items center
+    justify-content: flex-end
+    margin-bottom 12px
+    @media $m
+        display none
+    &__title
+        font-size 14px
+        padding-right 4px
+        margin-bottom 8px
+    &__item
+        padding 5px
+        &-icon
+            fill $text
+            opacity 0.8
+            transition all 0.3s ease
+        &:hover &-icon
+        &.active &-icon
+            fill $blue
+            opacity 1

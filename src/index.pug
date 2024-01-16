@@ -1,0 +1,77 @@
+extends layouts/default
+
+block content
+    .content.mainpage
+        .content__inner
+            form.search 
+                input.input.search__field(placeholder="Поиск")
+                select.select
+                    option(disabled selected) Конфигурация
+                    option 1С:CRM ПРОФ, КОРП 
+                    option 1С:ERP Управление предприятием 2  
+                    option 1С:Бухгалтерия 1.6  
+                    option 1С:Бухгалтерия 2.0   
+                    option 1С:Бухгалтерия 3.0   
+                    option 1С:Бухгалтерия автономного учреждения   
+                    option 1С:Бухгалтерия государственного учреждения  
+                    option 1С:Документооборот  
+                    option 1С:Зарплата и кадры бюджетного учреждения 
+                    option 1С:Зарплата и кадры государственного учреждения 3
+
+                button.search__submit(type="submit") 
+                    span.iconify(data-icon='mdi:search')
+            .list-toggle
+                .list-toggle__title Показывать:
+                a.list-toggle__item.active(href="#" title="списком")
+                    svg.list-toggle__item-icon(width="20" height="24")
+                        use(xlink:href="f/i/icons.svg#view-list")
+                a.list-toggle__item.grid(href="#" title="плиткой")
+                    svg.list-toggle__item-icon(width="20" height="24")
+                        use(xlink:href="f/i/icons.svg#view-grid")
+            .list
+             each val in [1, 2, 3, 4, 5]
+                .card
+                    a.card__cover(style="background-image:url(https://infostart.ru/upload/iblock/f4a/f4a19ef18de7035f99ca1c119561bd09.png)" href="item.html")
+                    .card__text
+                        a.card__text-title(href="item.html") Раздельный учет по гособоронзаказу (ГОЗ) - Подсистема для 1С:Бухгалтерии 3.0 ПРОФ и КОРП
+                        a.card__text-content(href="item.html")
+                            p Управляйте учетной политикой раздельного ведения затрат по контракту ГОЗ с подсистемой для 1С:Бухгалтерия. Отчеты по контрактам и контроль операций для исполнения в срок по 275-ФЗ. Управляйте учетной политикой раздельного ведения затрат по контракту ГОЗ с подсистемой для 1С:Бухгалтерия. Отчеты по контрактам и контроль операций для исполнения в срок по 275-ФЗ.
+                        .card__text-tags
+                            .tags
+                                a.tags__item(href="#") Бюджетный учет
+                                a.tags__item(href="#") Обмен с ГосИС
+                                a.tags__item(href="#") 1С:Управление производственным предприятием
+                                a.tags__item(href="#") 1С:Бухгалтерия 3.0 
+                        .card__text-date 28.08.2020
+
+                .card
+                    a.card__cover(style="background-image:url(https://infostart.ru/upload/iblock/6b0/6b0c2829268f783bea9cdcd38cf3bc69.png)" href="item.html")
+                    .card__text
+                        a.card__text-title(href="item.html") Модули интеграции с маркетплейсами (WILDBERRIES + ОЗОН + ЯНДЕКС МАРКЕТ+СБЕРМЕГАМАРКЕТ) по схеме FBS для УТ 11, КА 2, ERP 2, УНФ
+                        a.card__text-content(href="item.html")
+                            p Расширения позволяют взаимодействовать с личными кабинетами маркетплейсов WILDBERRIES, ОЗОН, ЯНДЕКС.МАРКЕТ и СБЕРМЕГАМАРКЕТ по схеме: FBS. Основным приоритетом в данной разработке является простота запуска и использования, а так же увеличение скорости сборки и обклейки стикерами заказов при больших объемах отгрузок.
+                        .card__text-tags
+                            .tags
+                                a.tags__item(href="#") Маркетплейсы 
+                                a.tags__item(href="#") 1С:Управление нашей фирмой 1.6
+                                a.tags__item(href="#") 1С:ERP Управление предприятием 2 
+                                a.tags__item(href="#") 1С:Управление торговлей 11 
+                                a.tags__item(href="#") 1С:Комплексная автоматизация 2.х 
+                                a.tags__item(href="#") 1С:Управление нашей фирмой 3.0
+                        .card__text-date 22.01.2023
+
+                .card
+                    a.card__cover(style="background-image:url(https://infostart.ru/upload/iblock/09b/09bb31db45addcdb4695cdce434f9c2c.png)" href="item.html")
+                    .card__text
+                        a.card__text-title(href="item.html") Расширение для интеграции с маркетплейсами из одного окна: Озон, ВБ, Яндекс, Сбер, Али, ЛаМода для 1С:УНФ, УТ, КА, ERP
+                        a.card__text-content(href="item.html")
+                            p Расширение позволяет управлять своими аккаунтами ведущих маркетплейсов по принципу одного окна из своей базы 1С. Единый интерфейс для всех площадок. Отправка остатков по сопоставленным товарам по расписанию, гибкая настройка отправки (несколько складов, признаки КГТ, Экспресс и т.п., деление, уменьшение, увеличение остатка перед отправкой, загрузка остатков поставщика по системе дроп-шиппинг). Поддержка наборов одного товара без создания карточек в 1С и наборов из разных товаров в УНФ и УТ, автоматический расчет остатков наборов. Импорт товаров с площадки в 1С, в том числе с характеристиками. Выгрузка товаров на площадки Озон, ВБ, Али, обмен карточками между площадками. Выгрузка цен на площадки вручную и по расписанию, удобные инструменты расчета цен. Контроль за ошибочным снижением цен. Загрузка заказов в 1С, резервирование. Инструменты для сборки заказов. Автоматизация процесса упаковки и выписки накладных. Аналитические отчеты. Загрузка отчета комиссионера по API и через Excel
+                        .card__text-tags
+                            .tags
+                                a.tags__item(href="#") Маркетплейсы 
+                                a.tags__item(href="#") 1С:Управление нашей фирмой 1.6
+                                a.tags__item(href="#") 1С:ERP Управление предприятием 2 
+                                a.tags__item(href="#") 1С:Управление торговлей 11 
+                                a.tags__item(href="#") 1С:Комплексная автоматизация 2.х 
+                                a.tags__item(href="#") 1С:Управление нашей фирмой 3.0
+                        .card__text-date 21.02.2023
